@@ -1,0 +1,63 @@
+# issue-1
+
+>>> python -m doctest -v -o NORMALIZE_WHITESPACE ./issue-01.py
+Trying:
+    encode("SOS")
+Expecting:
+    '... --- ...'
+ok
+Trying:
+    encode("абракадабра") # doctest: +IGNORE_EXCEPTION_DETAIL
+Expecting:
+    Traceback (most recent call last):
+    KeyError: 'а'
+ok
+1 items had no tests:
+    issue-01
+1 items passed all tests:
+   2 tests in issue-01.encode
+2 tests in 2 items.
+2 passed and 0 failed.
+Test passed.
+
+# issue-02
+>>> python -m pytest ./issue-02.py
+============================================================================= test session starts =============================================================================
+platform darwin -- Python 3.7.9, pytest-7.2.0, pluggy-1.0.0
+rootdir: /Users/akozlov/PycharmProjects/avito/python-hws
+collected 3 items
+
+tests/issue-02.py ...                                                                                                                                                   [100%]
+
+============================================================================== 3 passed in 0.01s ==============================================================================
+
+# issue-03
+>>> python ./issue-03.py
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.001s
+
+OK
+
+# issue-04
+>>> python -m pytest ./issue-04.py
+ ....                                                                                                                                                  [100%]
+
+============================================================================== 4 passed in 0.02s ==============================================================================
+
+
+# issue-05
+>>> python -m pytest ./issue-05.py --cov=issue-05 --cov-report html
+============================================================================= test session starts =============================================================================
+platform darwin -- Python 3.7.9, pytest-7.2.0, pluggy-1.0.0
+rootdir: /Users/akozlov/PycharmProjects/avito/python-hws
+plugins: cov-4.0.0
+collected 5 items
+
+tests/issue-05.py .....                                                                                                                                                 [100%]
+
+---------- coverage: platform darwin, python 3.7.9-final-0 -----------
+Coverage HTML written to dir htmlcov
+
+
+============================================================================== 5 passed in 0.13s ==============================================================================
